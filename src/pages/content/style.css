@@ -1,0 +1,137 @@
+.ATT_Icon {
+    position: relative;
+    border: 0;
+    font: inherit;
+    margin: 0 .2rem;
+    padding: 0;
+    vertical-align: baseline;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+    height: var(--button-size-default);
+    width: var(--button-size-default);
+    border: var(--border-width-default) solid transparent;
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-background-button-icon-overlay-default);
+    color: var(--color-text-button-overlay);
+    cursor: pointer;
+}
+
+.ATT_Icon:hover {
+    background-color: var(--color-background-button-icon-overlay-hover);
+    color: var(--color-text-button-overlay-hover);
+}
+
+.skipPlayer--right img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.ATT_Icon img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.ATT_Icon:before {
+    content: '';
+    position: absolute;
+    display: none;
+    border-radius: 0 0 var(--border-radius-small);
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 3px;
+    margin-left: -3px;
+    background-color: var(--color-background-tooltip);
+    width: 6px;
+    height: 6px;
+    transform: rotate(45deg);
+    z-index: 100;
+}
+
+.ATT_Icon:after {
+    content: '';
+    position: absolute;
+    display: none;
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    text-align: left;
+    z-index: var(--z-index-balloon);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    margin-bottom: 6px;
+    top: auto;
+    bottom: 100%;
+    padding: 3px 6px;
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-background-tooltip);
+    color: var(--color-text-tooltip);
+}
+
+.ATT_Icon:hover:after, .ATT_Icon:hover:before {
+    display: block;
+}
+
+.pipButton:after {
+    content: 'Picture in picture';
+    right: 0;
+}
+
+.floatingChatBtn:after {
+    content: 'Floating chat';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    top: 125%;
+}
+
+.floatingChatBtn:before {
+    bottom: 0;
+    margin-bottom: -10px;
+}
+
+.skipPlayer--left:after {
+    content: 'Fast rewind';
+    left: 0;
+}
+
+.skipPlayer--right:after {
+    content: 'Fast forward';
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.channel-root--live + .persistent-player .player-controls__left-control-group .ATT_Icon {
+    display: none;
+} 
+
+.full-width {
+    width: 100% !important;
+}
+
+.floating-column {
+    position: absolute;
+    right: 90px;
+    top: 30px;
+}
+
+.floating-column .channel-root__right-column {
+    height: 50rem;
+    min-width: 34.1rem;
+    min-height: 25rem;
+    resize: both;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.floating-column .toggle-visibility__right-column .floatingChatBtn,
+.toggle-visibility__right-column:not(.toggle-visibility__right-column--expanded) .floatingChatBtn {
+    display: none !important;
+}
+.floating-column .video-chat__header,
+.floating-column .stream-chat-header {
+    cursor: grab;
+}

@@ -18,10 +18,10 @@ function myMain() {
     ) as HTMLMediaElement;
 
     if (VIDEO_PLAYER && !VIDEO_PLAYER.classList.contains('att-loaded')) {
+      VIDEO_PLAYER.classList.add('att-loaded');
       renderChatButtons();
       renderLeftButtons();
       renderRightButtons();
-      VIDEO_PLAYER.classList.add('att-loaded');
     }
   }
 }

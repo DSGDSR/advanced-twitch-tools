@@ -19,8 +19,12 @@ function myMain() {
 
     if (VIDEO_PLAYER && !VIDEO_PLAYER.classList.contains('att-loaded')) {
       VIDEO_PLAYER.classList.add('att-loaded');
+      const isLive = !!document.querySelector(constants.classes.liveTag);
+
+      if (!isLive) {
+        renderLeftButtons();
+      }
       renderChatButtons();
-      renderLeftButtons();
       renderRightButtons();
     }
   }

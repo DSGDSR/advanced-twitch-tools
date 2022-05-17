@@ -105,10 +105,6 @@
     transform: translateX(-50%);
 }
 
-.channel-root--live + .persistent-player .player-controls__left-control-group .ATT_Icon {
-    display: none;
-} 
-
 .full-width {
     width: 100% !important;
 }
